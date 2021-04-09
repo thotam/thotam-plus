@@ -27,7 +27,7 @@ class NhomSanPham extends Model
      *
      * @var string
      */
-    protected $table = 'nhom_sanphams';
+    protected $table = 'nhom_san_phams';
 
     /**
      * Get the kinhdoanh that owns the NhomSanPham

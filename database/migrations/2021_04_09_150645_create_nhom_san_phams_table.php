@@ -13,7 +13,7 @@ class CreateNhomSanphamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('nhom_sanphams', function (Blueprint $table) {
+        Schema::create('nhom_san_phams', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 255);
             $table->string('tag', 50);
@@ -36,6 +36,6 @@ class CreateNhomSanphamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nhom_sanphams');
+        Schema::dropIfExists('nhom_san_phams');
     }
 }
