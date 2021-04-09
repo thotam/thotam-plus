@@ -17,13 +17,46 @@ composer require thotam/thotam-plus
 
 ## Usage
 
-``` php
-// Usage description here
+```php
+Add "Thotam\ThotamPlus\Traits\ThoTamPlusTrait" to Models you want to use
+```
+
+```php
+For ChiNhanh add:
+$table->bigInteger('chinhanh_id')->unsigned()->nullable()->default(null);
+$table->foreign('chinhanh_id')->references('id')->on('chinhanhs')->onDelete('SET NULL')->onUpdate('cascade');
+to table
+```
+
+```php
+For KenhKinhDoanh add:
+$table->bigInteger('kenh_kinh_doanh_id')->unsigned()->nullable()->default(null);
+$table->foreign('kenh_kinh_doanh_id')->references('id')->on('kenh_kinh_doanhs')->onDelete('SET NULL')->onUpdate('cascade');
+to table
+```
+
+```php
+For NhomSanPham add:
+$table->bigInteger('nhom_san_pham_id')->unsigned()->nullable()->default(null);
+$table->foreign('nhom_san_pham_id')->references('id')->on('nhom_san_phams')->onDelete('SET NULL')->onUpdate('cascade');
+to table
+```
+
+#### Next, you must migrate your database:
+
+```php
+php artisan migrate
+```
+
+#### Next, you should run seed:
+
+```php
+php artisan db:seed
 ```
 
 ### Testing
 
-``` bash
+```bash
 composer test
 ```
 
@@ -41,8 +74,8 @@ If you discover any security related issues, please email thanhtamtqno1@gmail.co
 
 ## Credits
 
-- [thotam](https://github.com/thotam)
-- [All Contributors](../../contributors)
+-   [thotam](https://github.com/thotam)
+-   [All Contributors](../../contributors)
 
 ## License
 
