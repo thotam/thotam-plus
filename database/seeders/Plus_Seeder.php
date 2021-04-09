@@ -7,7 +7,7 @@ use Thotam\ThotamPlus\Models\ChiNhanh;
 use Thotam\ThotamPlus\Models\NhomSanPham;
 use Thotam\ThotamPlus\Models\KenhKinhDoanh;
 
-class ThoTamPlus_Seeder extends Seeder
+class Plus_Seeder extends Seeder
 {
     /**
      * Run the database seeds.
