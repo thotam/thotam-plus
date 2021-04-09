@@ -1,0 +1,56 @@
+{
+    "name": "thotam/thotam-plus",
+    "description": "ThoTam additional features",
+    "keywords": [
+        "thotam",
+        "thotam-plus"
+    ],
+    "homepage": "https://github.com/thotam/thotam-plus",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "thotam",
+            "email": "thanhtamtqno1@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/console": "^8.0",
+        "illuminate/contracts": "^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Thotam\\ThotamPlus\\": "src",
+            "Thotam\\ThotamPlus\\Database\\Seeders\\": "database/seeders"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Thotam\\ThotamPlus\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Thotam\\ThotamPlus\\ThotamPlusServiceProvider"
+            ],
+            "aliases": {
+                "ThotamPlus": "Thotam\\ThotamPlus\\ThotamPlusFacade"
+            }
+        }
+    }
+}
