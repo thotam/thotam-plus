@@ -61,7 +61,7 @@ class ThoTamPlus_Seeder extends Seeder
             ['id' => 5],
             [
                 'name' => "Văn phòng Thanh Hóa",
-                'tag' => "CNĐN",
+                'tag' => "VPTH",
                 'diachi' => "Lô 07 BT08 Khu ĐTM Đông Sơn, Phường An Hưng, Thành phố Thanh Hóa, Tỉnh Thanh Hóa",
                 'order' => 5,
                 'active' => true
@@ -71,7 +71,7 @@ class ThoTamPlus_Seeder extends Seeder
             ['id' => 6],
             [
                 'name' => "Văn phòng Nghệ An",
-                'tag' => "CNĐN",
+                'tag' => "VPNA",
                 'diachi' => "Số nhà TT02, Đại lộ Lê Nin, Xã Nghi Phú, Thành phố Vinh, Tỉnh Nghệ An",
                 'order' => 6,
                 'active' => true
@@ -81,7 +81,7 @@ class ThoTamPlus_Seeder extends Seeder
             ['id' => 7],
             [
                 'name' => "Văn phòng Tây Nguyên",
-                'tag' => "CNĐN",
+                'tag' => "VPTN",
                 'diachi' => "Số 4 đường Lý Tự Trọng, Phường Tân An, Thành phố Buôn Ma Thuột, Tỉnh Đắk Lắk",
                 'order' => 7,
                 'active' => true
@@ -91,7 +91,7 @@ class ThoTamPlus_Seeder extends Seeder
             ['id' => 8],
             [
                 'name' => "Văn phòng Khánh Hòa",
-                'tag' => "CNĐN",
+                'tag' => "VPKH",
                 'diachi' => "Số 12 Thoại Ngọc Hầu, Phường Vĩnh Hòa, Thành phố Nha Trang, tỉnh Khánh Hòa ",
                 'order' => 8,
                 'active' => true
