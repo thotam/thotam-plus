@@ -221,7 +221,7 @@ class ThoTamPlus_Seeder extends Seeder
             ['id' => 9],
             [
                 'name' => "Gây mê hồi sức",
-                'tag' => "Gây mê hồi sức",
+                'tag' => "GMHS",
                 'kenh_kinh_doanh_id' => 3,
                 'order' => 1,
                 'active' => true
