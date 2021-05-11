@@ -43,7 +43,7 @@ to table
 ```
 
 ```php
-Add "Thotam\ThotamPlus\Traits\ThoTamPlusTrait" to Models you want to TinhHuyenXa
+Add "Thotam\ThotamPlus\Traits\TinhHuyenXaTrait" to Models you want to TinhHuyenXa
 ```
 
 ```php
