@@ -42,6 +42,31 @@ $table->foreign('nhom_san_pham_id')->references('id')->on('nhom_san_phams')->onD
 to table
 ```
 
+```php
+Add "Thotam\ThotamPlus\Traits\ThoTamPlusTrait" to Models you want to TinhHuyenXa
+```
+
+```php
+For Tinh add:
+$table->bigInteger('tinh_id')->unsigned()->nullable()->default(null);
+$table->foreign('tinh_id')->references('id')->on('list_tinhs')->onDelete('SET NULL')->onUpdate('cascade');
+to table
+```
+
+```php
+For Huyen add:
+$table->bigInteger('huyen_id')->unsigned()->nullable()->default(null);
+$table->foreign('huyen_id')->references('id')->on('list_huyens')->onDelete('SET NULL')->onUpdate('cascade');
+to table
+```
+
+```php
+For Xa add:
+$table->bigInteger('xa_id')->unsigned()->nullable()->default(null);
+$table->foreign('xa_id')->references('id')->on('list_xas')->onDelete('SET NULL')->onUpdate('cascade');
+to table
+```
+
 #### Next, you must migrate your database:
 
 ```php
