@@ -282,7 +282,7 @@ class ThoTamPlus_Seeder extends Seeder
             ['id' => 3],
             [
                 'name' => "Mountain sank",
-                'tag' => "MN",
+                'tag' => "MC",
                 'order' => 3,
                 'active' => true
             ]
