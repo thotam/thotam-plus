@@ -4,6 +4,7 @@ namespace Thotam\ThotamPlus\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Thotam\ThotamPlus\Models\ChiNhanh;
+use Thotam\ThotamPlus\Models\MktSubTeam;
 use Thotam\ThotamPlus\Models\NhomSanPham;
 use Thotam\ThotamPlus\Models\KenhKinhDoanh;
 
@@ -254,6 +255,44 @@ class ThoTamPlus_Seeder extends Seeder
                 'tag' => "Hỗn hợp",
                 'kenh_kinh_doanh_id' => 4,
                 'order' => 999,
+                'active' => true
+            ]
+        );
+
+        //MktSubTeam
+        MktSubTeam::updateOrCreate(
+            ['id' => 1],
+            [
+                'name' => "Sunshine",
+                'tag' => "S",
+                'order' => 1,
+                'active' => true
+            ]
+        );
+        MktSubTeam::updateOrCreate(
+            ['id' => 2],
+            [
+                'name' => "Mountain floating",
+                'tag' => "MN",
+                'order' => 2,
+                'active' => true
+            ]
+        );
+        MktSubTeam::updateOrCreate(
+            ['id' => 3],
+            [
+                'name' => "Mountain sank",
+                'tag' => "MN",
+                'order' => 3,
+                'active' => true
+            ]
+        );
+        MktSubTeam::updateOrCreate(
+            ['id' => 4],
+            [
+                'name' => "Ocean",
+                'tag' => "O",
+                'order' => 4,
                 'active' => true
             ]
         );
