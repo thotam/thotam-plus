@@ -258,43 +258,5 @@ class ThoTamPlus_Seeder extends Seeder
                 'active' => true
             ]
         );
-
-        //MktSubTeam
-        MktSubTeam::updateOrCreate(
-            ['id' => 1],
-            [
-                'name' => "Sunshine",
-                'tag' => "S",
-                'order' => 1,
-                'active' => true
-            ]
-        );
-        MktSubTeam::updateOrCreate(
-            ['id' => 2],
-            [
-                'name' => "Mountain floating",
-                'tag' => "MN",
-                'order' => 2,
-                'active' => true
-            ]
-        );
-        MktSubTeam::updateOrCreate(
-            ['id' => 3],
-            [
-                'name' => "Mountain sank",
-                'tag' => "MC",
-                'order' => 3,
-                'active' => true
-            ]
-        );
-        MktSubTeam::updateOrCreate(
-            ['id' => 4],
-            [
-                'name' => "Ocean",
-                'tag' => "O",
-                'order' => 4,
-                'active' => true
-            ]
-        );
     }
 }
