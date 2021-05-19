@@ -4,7 +4,6 @@ namespace Thotam\ThotamPlus\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Thotam\ThotamPlus\Models\ChiNhanh;
-use Thotam\ThotamPlus\Models\MktSubTeam;
 use Thotam\ThotamPlus\Models\NhomSanPham;
 use Thotam\ThotamPlus\Models\KenhKinhDoanh;
 
