@@ -97,6 +97,16 @@ class ThoTamPlus_Seeder extends Seeder
                 'active' => true
             ]
         );
+        ChiNhanh::updateOrCreate(
+            ['id' => 9],
+            [
+                'name' => "Văn phòng Hải Phòng",
+                'tag' => "VPHP",
+                'diachi' => "Số 14/139 Phố Tô Vũ, Lô BT 14 Kiều sơn, Phường Đằng Lâm, Quận Hải An, Thành phố Hải Phòng",
+                'order' => 9,
+                'active' => true
+            ]
+        );
 
         //KenhKinhDoanh Seed
         KenhKinhDoanh::updateOrCreate(
