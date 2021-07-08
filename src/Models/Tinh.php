@@ -48,6 +48,6 @@ class Tinh extends Model
      */
     public function huyens(): HasMany
     {
-        return $this->hasMany(Huyen::class, 'tinh_id', 'id');
+        return $this->hasMany(Huyen::class, 'tinh_id', 'id')->orderBy('order')->orderBy('name');
     }
 }
