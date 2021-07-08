@@ -42,11 +42,11 @@ class Huyen extends Model
     }
 
     /**
-     * Get all of the xax for the Huyen
+     * Get all of the xas for the Huyen
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function xax(): HasMany
+    public function xas(): HasMany
     {
         return $this->hasMany(Xa::class, 'huyen_id', 'id');
     }
