@@ -48,6 +48,6 @@ class Huyen extends Model
      */
     public function xas(): HasMany
     {
-        return $this->hasMany(Xa::class, 'huyen_id', 'id')->orderBy('order')->orderBy('name');
+        return $this->hasMany(Xa::class, 'huyen_id', 'id')->where('active', true)->orderBy('order')->orderBy('name');
     }
 }
