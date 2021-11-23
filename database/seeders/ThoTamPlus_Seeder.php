@@ -147,6 +147,15 @@ class ThoTamPlus_Seeder extends Seeder
                 'active' => true
             ]
         );
+        KenhKinhDoanh::updateOrCreate(
+            ['id' => 5],
+            [
+                'name' => "GT",
+                'tag' => "GT",
+                'order' => 5,
+                'active' => true
+            ]
+        );
 
         //NhomSanPham Seed
         NhomSanPham::updateOrCreate(
