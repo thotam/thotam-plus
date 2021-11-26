@@ -41,4 +41,23 @@ trait TinhHuyenXaTrait {
         return $this->belongsTo(Xa::class, 'xa_id', 'id');
     }
 
+    /**
+     * getHuyenAttribute
+     *
+     * @return void
+     */
+    public function getHuyenAttribute()
+    {
+        return $this->xa->huyen;
+    }
+
+    /**
+     * getTinhAttribute
+     *
+     * @return void
+     */
+    public function getTinhAttribute()
+    {
+        return $this->xa->huyen->tinh;
+    }
 }
