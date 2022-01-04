@@ -278,6 +278,36 @@ class ThoTamPlus_Seeder extends Seeder
                 'active' => true
             ]
         );
+        NhomSanPham::updateOrCreate(
+            ['id' => 13],
+            [
+                'name' => "Tiêu hóa",
+                'tag' => "Tiêu hóa",
+                'kenh_kinh_doanh_id' => 4,
+                'order' => 1,
+                'active' => true
+            ]
+        );
+        NhomSanPham::updateOrCreate(
+            ['id' => 14],
+            [
+                'name' => "Da liễu",
+                'tag' => "Da liễu",
+                'kenh_kinh_doanh_id' => 4,
+                'order' => 2,
+                'active' => true
+            ]
+        );
+        NhomSanPham::updateOrCreate(
+            ['id' => 15],
+            [
+                'name' => "Thần kinh",
+                'tag' => "Thần kinh",
+                'kenh_kinh_doanh_id' => 4,
+                'order' => 3,
+                'active' => true
+            ]
+        );
 
         //NhaMang Seed
         NhaMang::updateOrCreate(
