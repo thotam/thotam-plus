@@ -309,6 +309,17 @@ class ThoTamPlus_Seeder extends Seeder
             ]
         );
 
+        NhomSanPham::updateOrCreate(
+            ['id' => 16],
+            [
+                'name' => "Hỗn hợp",
+                'tag' => "Hỗn hợp",
+                'kenh_kinh_doanh_id' => 5,
+                'order' => 999,
+                'active' => true
+            ]
+        );
+
         //NhaMang Seed
         NhaMang::updateOrCreate(
             ['id' => 1],
