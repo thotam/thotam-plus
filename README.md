@@ -67,6 +67,10 @@ $table->foreign('xa_id')->references('id')->on('list_xas')->onDelete('SET NULL')
 to table
 ```
 
+```php
+Add "Thotam\ThotamPlus\Traits\ChiNhanhTrait" to "Thotam\ThotamHr\Models\HR" Model
+```
+
 #### Next, you must migrate your database:
 
 ```php

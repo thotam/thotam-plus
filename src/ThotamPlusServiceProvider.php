@@ -2,7 +2,10 @@
 
 namespace Thotam\ThotamPlus;
 
+use Livewire\Livewire;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
+use Thotam\ThotamPlus\Http\Livewire\ChiNhanhLivewire;
 
 class ThotamPlusServiceProvider extends ServiceProvider
 {
@@ -15,13 +18,15 @@ class ThotamPlusServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'thotam-plus');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'thotam-plus');
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'thotam-plus');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        Route::domain('beta.' . env('APP_DOMAIN', 'cpc1hn.com.vn'))->group(function () {
+            $this->loadRoutesFrom(__DIR__ . '/../routes/routes.php');
+        });
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('thotam-plus.php'),
+                __DIR__ . '/../config/config.php' => config_path('thotam-plus.php'),
             ], 'config');
 
             // Publishing the views.
@@ -57,11 +62,15 @@ class ThotamPlusServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'thotam-plus');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'thotam-plus');
 
         // Register the main class to use with the facade
         $this->app->singleton('thotam-plus', function () {
             return new ThotamPlus;
         });
+
+        if (class_exists(Livewire::class)) {
+            Livewire::component('thotam-plus::chinhanh-livewire', ChiNhanhLivewire::class);
+        }
     }
 }

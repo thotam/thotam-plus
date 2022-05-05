@@ -3,9 +3,11 @@
 namespace Thotam\ThotamPlus\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 use Thotam\ThotamPlus\Models\NhaMang;
 use Thotam\ThotamPlus\Models\ChiNhanh;
 use Thotam\ThotamPlus\Models\NganHang;
+use Spatie\Permission\Models\Permission;
 use Thotam\ThotamPlus\Models\NhomSanPham;
 use Thotam\ThotamPlus\Models\KenhKinhDoanh;
 
@@ -18,6 +20,76 @@ class ThoTamPlus_Seeder extends Seeder
      */
     public function run()
     {
+        //Permission
+        $permission[] = Permission::updateOrCreate([
+            'name' => 'view-chinhanh'
+        ], [
+            "description" => "Xem Chi nhánh",
+            "group" => "Chi nhánh",
+            "order" => 1,
+            "lock" => true,
+        ]);
+
+        $permission[] = Permission::updateOrCreate([
+            'name' => 'add-chinhanh'
+        ], [
+            "description" => "Thêm Chi nhánh",
+            "group" => "Chi nhánh",
+            "order" => 2,
+            "lock" => true,
+        ]);
+
+        $permission[] = Permission::updateOrCreate([
+            'name' => 'edit-chinhanh'
+        ], [
+            "description" => "Sửa Chi nhánh",
+            "group" => "Chi nhánh",
+            "order" => 2,
+            "lock" => true,
+        ]);
+
+
+        $permission[] = Permission::updateOrCreate([
+            'name' => 'delete-chinhanh'
+        ], [
+            "description" => "Xóa Chi nhánh",
+            "group" => "Chi nhánh",
+            "order" => 3,
+            "lock" => true,
+        ]);
+
+        //Role
+        $super_admin = Role::updateOrCreate([
+            'name' => 'super-admin'
+        ], [
+            "description" => "Super Admin",
+            "group" => "Admin",
+            "order" => 1,
+            "lock" => true,
+        ]);
+
+        $admin = Role::updateOrCreate([
+            'name' => 'admin'
+        ], [
+            "description" => "Admin",
+            "group" => "Admin",
+            "order" => 2,
+            "lock" => true,
+        ]);
+
+        $admin_chinhanh = Role::updateOrCreate([
+            'name' => 'admin-chinhanh'
+        ], [
+            "description" => "Admin Chi nhánh",
+            "group" => "Admin",
+            "order" => 10,
+            "lock" => true,
+        ]);
+
+        $super_admin->givePermissionTo($permission);
+        $admin->givePermissionTo($permission);
+        $admin_chinhanh->givePermissionTo($permission);
+
         //ChiNhanh Seed
         ChiNhanh::updateOrCreate(
             ['id' => 1],
@@ -351,191 +423,191 @@ class ThoTamPlus_Seeder extends Seeder
             ['id' => 1],
             ['bank_name' => "Vietcombank_TMCP Ngoại thương Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 2],
             ['bank_name' => "Vietinbank_TMCP Công Thương Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 3],
             ['bank_name' => "BIDV_TMCP Đầu tư và Phát triển Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 4],
             ['bank_name' => "Agribank_Nông nghiệp và Phát triển Nông thôn Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 5],
             ['bank_name' => "VPBank_TMCP Việt Nam Thịnh Vượng", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 6],
             ['bank_name' => "Sacombank _TMCP Sài Gòn Thương Tín", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 7],
             ['bank_name' => "ACB_TMCP Á Châu", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 8],
             ['bank_name' => "HSBC_TNHH Một Thành Viên HSBC Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 9],
             ['bank_name' => "DongA Bank_TMCP Đông Á", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 10],
             ['bank_name' => "TPBank_TMCP Tiên Phong", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 11],
             ['bank_name' => "EximBank_TMCP Xuất Nhập Khẩu Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 12],
             ['bank_name' => "VIB_TMCP Quốc Tế Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 13],
             ['bank_name' => "SHB_TMCP Sài Gòn - Hà Nội", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 14],
             ['bank_name' => "OCB_TMCP Phương Đông", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 15],
             ['bank_name' => "Shinhan Bank_TNHH MTV Shinhan Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 16],
             ['bank_name' => "Vietbank_Việt Nam Thương Tín", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 17],
             ['bank_name' => "PG Bank_TMCP Xăng dầu Petrolimex Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 18],
             ['bank_name' => "SCB_TMCP Sài Gòn", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 19],
             ['bank_name' => "Maritime Bank_TMCP Hàng Hải Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 20],
             ['bank_name' => "ABBank_TMCP An Bình", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 21],
             ['bank_name' => "Techcombank_TMCP Kỹ Thương Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 22],
             ['bank_name' => "MBBank_TMCP Quân Đội", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 23],
             ['bank_name' => "LienVietPostBank_TMCP Bưu Điện Liên Việt", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 24],
             ['bank_name' => "SeABank_TMCP Đông Nam Á", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 25],
             ['bank_name' => "Standard Chartered_TNHH MTV Standard Chartered Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 26],
             ['bank_name' => "PVcomBank_TMCP Đại Chúng Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 27],
             ['bank_name' => "ANZ_TNHH MTV ANZ", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 28],
             ['bank_name' => "UOB_TNHH MTV United Overseas Bank (Việt Nam)", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 29],
             ['bank_name' => "First Bank_First Commercial Bank", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 30],
             ['bank_name' => "Woori Bank_TNHH MTV Woori Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 31],
             ['bank_name' => "Nam A Bank_TMCP Nam Á", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 32],
             ['bank_name' => "Saigonbank_TMCP Sài Gòn Công Thương", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 33],
             ['bank_name' => "Bac A Bank_TMCP Bắc Á", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 34],
             ['bank_name' => "HDBank_TMCP Phát triển Nhà TP.HCM", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 35],
             ['bank_name' => "Viet Capital Bank_TMCP Bản Việt", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 36],
             ['bank_name' => "VietABank_TMCP Việt Á", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 37],
             ['bank_name' => "GPBank_TM TNHH MTV Dầu Khí Toàn Cầu", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 38],
             ['bank_name' => "NCB_TMCP Quốc Dân", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 39],
             ['bank_name' => "KienLong Bank_TMCP Kiên Long", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 40],
             ['bank_name' => "OceanBank_TM TNHH MTV Đại Dương", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 41],
             ['bank_name' => "CBBank_TM TNHH MTV Xây dựng Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 42],
             ['bank_name' => "BAOVIET Bank_TMCP Bảo Việt", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 43],
             ['bank_name' => "VBSP_Chính sách Xã hội Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 44],
             ['bank_name' => "VDB_Phát Triển Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 45],
             ['bank_name' => "Public Bank Việt Nam_TNHH MTV Public Việt Nam", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 46],
             ['bank_name' => "Indovina Bank_TNHH Indovina", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 47],
             ['bank_name' => "VRB_Liên doanh Việt - Nga", 'active' => true]
         );
-         NganHang::updateOrCreate(
+        NganHang::updateOrCreate(
             ['id' => 48],
             ['bank_name' => "HongLeong Bank_Hong Leong Việt Nam (HongLeong)", 'active' => true]
         );
