@@ -174,8 +174,7 @@ class ChiNhanhLivewire extends Component
                 ]
             );
 
-
-            if (is_array($this->giamdocs) && count($this->giamdocs)) {
+            if (is_array($this->giamdocs)) {
                 $this->chinhanh->giamdocs()->sync($this->giamdocs);
             }
 
