@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('chinhanh_giamdocs', function (Blueprint $table) {
-            $table->string('hr_key', 10);
+            $table->string('hr_key', 20);
             $table->foreign('hr_key')->references('key')->on('hrs')->onDelete('cascade')->onUpdate('cascade');
             $table->bigInteger('chinhanh_id')->unsigned();
             $table->primary(['hr_key', 'chinhanh_id']);
