@@ -10,7 +10,8 @@ use Thotam\ThotamPlus\Models\NhomSanPham;
 use Thotam\ThotamPlus\Models\KenhKinhDoanh;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-trait TinhHuyenXaTrait {
+trait TinhHuyenXaTrait
+{
     /**
      * Get the tinh that owns the TinhHuyenXaTrait
      *
@@ -59,5 +60,21 @@ trait TinhHuyenXaTrait {
     public function getTinhAttribute()
     {
         return $this->xa->huyen->tinh;
+    }
+
+    /**
+     * getFullDiachiAttribute
+     *
+     * @param  mixed $long
+     * @return void
+     */
+    public function getFullDiachiAttribute(bool $long = false)
+    {
+        $diachi = [];
+        $diachi[] = $this->diachi;
+        $diachi[] = ($long ? $this->xa->level : $this->xa->sort_level) . ' ' . $this->xa->name;
+        $diachi[] = ($long ? $this->xa->huyen->level : $this->xa->huyen->sort_level) . ' ' . $this->xa->huyen->name;
+        $diachi[] = ($long ? $this->xa->huyen->tinh->level : $this->xa->huyen->tinh->sort_level) . ' ' . $this->xa->huyen->tinh->name;
+        return collect($diachi)->implode(' - ');
     }
 }
