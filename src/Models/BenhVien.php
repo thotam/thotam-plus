@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Thotam\ThotamPlus\Traits\TinhHuyenXaTrait;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Thotam\ThotamHoithaoEtc\Models\HoithaoEtcList;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -40,6 +42,16 @@ class BenhVien extends Model
     public function hr(): BelongsTo
     {
         return $this->belongsTo(HR::class, 'hr_key');
+    }
+
+    /**
+     * Get all of the hoithaos for the BenhVien
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function hoithaos(): HasMany
+    {
+        return $this->hasMany(HoithaoEtcList::class, 'benhvien_id');
     }
 
     /**
