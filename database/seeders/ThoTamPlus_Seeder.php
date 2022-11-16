@@ -281,10 +281,30 @@ class ThoTamPlus_Seeder extends Seeder
             ]
         );
         NhomSanPham::updateOrCreate(
+            ['id' => 17],
+            [
+                'name' => "Răng hàm mặt",
+                'tag' => "RHM",
+                'kenh_kinh_doanh_id' => 1,
+                'order' => 6,
+                'active' => true
+            ]
+        );
+        NhomSanPham::updateOrCreate(
             ['id' => 6],
             [
-                'name' => "Hỗn hợp",
-                'tag' => "Hỗn hợp",
+                'name' => "Hỗn hợp 1",
+                'tag' => "Hỗn hợp 1",
+                'kenh_kinh_doanh_id' => 1,
+                'order' => 999,
+                'active' => true
+            ]
+        );
+        NhomSanPham::updateOrCreate(
+            ['id' => 18],
+            [
+                'name' => "Hỗn hợp 2",
+                'tag' => "Hỗn hợp 2",
                 'kenh_kinh_doanh_id' => 1,
                 'order' => 999,
                 'active' => true
@@ -307,6 +327,16 @@ class ThoTamPlus_Seeder extends Seeder
                 'tag' => "Nhóm 2",
                 'kenh_kinh_doanh_id' => 2,
                 'order' => 2,
+                'active' => true
+            ]
+        );
+        NhomSanPham::updateOrCreate(
+            ['id' => 19],
+            [
+                'name' => "Beauty plus",
+                'tag' => "BP",
+                'kenh_kinh_doanh_id' => 2,
+                'order' => 3,
                 'active' => true
             ]
         );
